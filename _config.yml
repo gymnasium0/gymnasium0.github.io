@@ -1,0 +1,13 @@
+title: gymnasium0
+description: gymnasium0's blog
+exclude:
+  - README.md
+  - LICENSE
+  - LICENSE_CONTENT.txt
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

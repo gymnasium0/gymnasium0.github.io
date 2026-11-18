@@ -1,0 +1,28 @@
+<!-- SPDX-FileCopyrightText: 2026 gymnasium0 -->
+<!-- SPDX-License-Identifier: MIT -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ page.title }} | {{ site.title }}</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+	{% include header.html %}
+
+	<main>
+		<article data-license="CC-BY-4.0">
+			<h1>{{ page.title }}</h1>
+			{{ content }}
+
+		</article>
+	</main>
+	
+	{% include footer.html %}
+</body>
+
+</html>
