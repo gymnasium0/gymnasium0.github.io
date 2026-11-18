@@ -1,5 +1,7 @@
-title: gymnasium0
+title: gymnasium0's Blog
 description: gymnasium0's blog
+theme: null
+highlighter: rouge
 exclude:
   - README.md
   - LICENSE

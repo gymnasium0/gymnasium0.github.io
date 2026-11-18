@@ -1,0 +1,136 @@
+/* SPDX-FileCopyrightText: 2026 gymnasium0 */
+/* SPDX-License-Identifier: MIT */
+
+.highlight {
+	--blue: #5b83fc;
+	--yellow: #d8a753;
+	--purple: #8e78d5;
+	--green: #48a160;
+	--light-blue: #6cc8df;
+	--red: #c43737;
+}
+
+.highlight table td {
+	padding: 5px;
+}
+
+.highlight table pre {
+	margin: 0;
+}
+
+.highlight,
+.highlight .w {
+	color: #c9d1d9;
+	background-color: #161b22;
+}
+
+
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs,
+.highlight .sd {
+	color: var(--green);
+	font-style: italic;
+}
+
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+	color: var(--yellow);
+}
+
+.highlight .n,
+.highlight .na,
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .nf,
+.highlight .fm,
+.highlight .py,
+.highlight .nl,
+.highlight .nn,
+.highlight .nx,
+.highlight .nt,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm {
+	color: var(--light-blue);
+}
+
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .ow {
+	color: var(--purple);
+}
+
+.highlight .kt,
+.highlight .nb,
+.highlight .bp,
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo {
+	color: var(--blue);
+}
+
+.highlight .ne,
+.highlight .gd,
+.highlight .gr,
+.highlight .gt {
+	color: var(--red);
+}
+
+.highlight .err {
+	color: #ffffff;
+	background-color: var(--red);
+}
+
+.highlight .o,
+.highlight .p,
+.highlight .g,
+.highlight .go,
+.highlight .gp {
+	color: inherit;
+}
+
+.highlight .gi {
+	color: var(--green);
+}
+
+.highlight .gh,
+.highlight .gu {
+	color: var(--purple);
+	font-weight: bold;
+}
+
+.highlight .ge {
+	font-style: italic;
+}
+
+.highlight .gs {
+	font-weight: bold;
+}

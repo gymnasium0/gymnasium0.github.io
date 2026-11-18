@@ -8,7 +8,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ page.title }} | {{ site.title }}</title>
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+	<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
@@ -16,13 +23,72 @@
 
 	<main>
 		<article data-license="CC-BY-4.0">
-			<h1>{{ page.title }}</h1>
-			{{ content }}
+			<header>
+				<p class="post-meta">
+					<time datetime="{{ page.date | date_to_xmlschema }}">
+						{{ page.date | date: "%B %-d, %Y" }}
+					</time>
+					{% if page.tags.size > 0 %}
+					<span class="post-tags">
+						{% for tag in page.tags %}
+						<span class="tag">{{ tag }}</span>
+						{% endfor %}
+					</span>
+					{% endif %}
+				</p>
+				<h1>{{ page.title }}</h1>
+			</header>
 
+			{{ content }}
 		</article>
 	</main>
-	
+
 	{% include footer.html %}
+
+	<script>
+		function syncIframeHeight(iframe) {
+			const setupObserver = () => {
+				const doc = iframe.contentDocument;
+				if (!doc || !doc.body || !doc.documentElement) return;
+
+				doc.documentElement.style.overflow = "hidden";
+				doc.body.style.overflow = "hidden";
+
+				const updateHeight = () => {
+					const height = Math.max(
+						doc.body.scrollHeight,
+						doc.body.offsetHeight,
+						doc.documentElement.offsetHeight
+					);
+
+					if (height > 0 && iframe.style.height !== `${height}px`) {
+						iframe.style.height = `${height}px`;
+					}
+				};
+
+				updateHeight();
+
+				const observer = new ResizeObserver(updateHeight);
+				observer.observe(doc.body);
+				observer.observe(doc.documentElement);
+			};
+
+			iframe.addEventListener('load', setupObserver);
+			if (iframe.contentDocument?.readyState === 'complete' && iframe.contentDocument?.body?.innerHTML !== '') {
+				setupObserver();
+			}
+		}
+
+		document.querySelectorAll('article iframe[srcdoc]').forEach((iframe) => {
+			iframe.dataset.license = 'CC0-1.0';
+			syncIframeHeight(iframe);
+		});
+
+		document.querySelectorAll('article pre').forEach((block) => {
+			block.dataset.license = 'CC0-1.0';
+		});
+	</script>
+
 </body>
 
 </html>
