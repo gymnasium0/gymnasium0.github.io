@@ -104,11 +104,6 @@
 	color: var(--red);
 }
 
-.highlight .err {
-	color: #ffffff;
-	background-color: var(--red);
-}
-
 .highlight .o,
 .highlight .p,
 .highlight .g,
