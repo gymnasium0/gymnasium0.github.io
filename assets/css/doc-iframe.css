@@ -16,3 +16,16 @@ html {
 body {
 	margin: 0;
 }
+
+button.normal {
+	border: none;
+	border-radius: 5rem;
+	background: rgb(5, 43, 82);
+	padding: .5rem 1rem;
+	font-family: inherit;
+	color: inherit;
+}
+
+button.normal:hover {
+	filter: brightness(0.8);
+}
